@@ -7,6 +7,7 @@ Running
 =======
 
 Just copy bs-upgrader.js into the project's folder and run it with node
+	
 	$ node bs-upgrader.js
 
 Troubleshooting
