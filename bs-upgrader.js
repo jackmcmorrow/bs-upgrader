@@ -6,7 +6,7 @@ var fs  = require('fs');
 //var _ = require('./underscore.js');
 var bs  = 'bootstrap-3.0.min.css';
 var log = 'bootstrap3-upgradelog.txt'
-var fileTypes = '.phtml' //Filetypes to be searched for bootstrap 2.3 classes.
+var fileType = '.phtml' //Filetypes to be searched for bootstrap 2.3 classes.
 var erros = new Array();
 
 //Criar arquivo de log
@@ -71,7 +71,7 @@ var listarArquivos = function (currentPath) {
 		if (stats.isFile() ) {
 			var extensao = [].concat( arq.match(/\..*/) );
 			//class=".+?\" <--- REGEX pra pegar as classes.
-			if (extensao[0] === '.phtml') { //Buscar apenas nos PHTML
+			if (extensao[0] === fileType) { //Buscar apenas nos PHTML
 				msg(' |\t- ' + arqs[i].toString())
 				var arqCont = fs.readFileSync(arq);	//class=".+?\"
 				var buscarClasses = /class=".+?"/g;
